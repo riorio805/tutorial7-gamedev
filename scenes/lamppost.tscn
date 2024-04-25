@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0901961, 0.211765, 0.603922, 1 )
+metallic_specular = 0.62
+
+[node name="lamppost" type="CSGCombiner"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 3.0
+height = 0.5
+depth = 3.0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+radius = 0.35
+height = 8.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 3, 0, 7.2, 0 )
+polygon = PoolVector2Array( 0, 0.4, 0, 0.6, 0.5, 1, 1, 0 )
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
+material = SubResource( 1 )

@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="hoop" type="CSGCombiner"]
+use_collision = true
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 3, 3.25, 0, 0 )
+polygon = PoolVector2Array( 1, 1, 0.9, 1, 0.8, 0, 0.9, 0 )
+mode = 1
+spin_degrees = 360.0
+spin_sides = 24
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 0.25
+height = 8.0
+depth = 10.0
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249971, 1.13654, 0 )
+width = 0.6
+height = 1.0
+depth = 1.0

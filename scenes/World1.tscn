@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.909804, 0.0745098, 0.0745098, 1 )
+
+[node name="World1" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="Room1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+invert_faces = true
+width = 30.0
+height = 30.0
+depth = 30.0
+
+[node name="Room2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
+invert_faces = true
+width = 15.0
+height = 10.0
+depth = 30.0
+
+[node name="hole" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
+invert_faces = true
+width = 15.0
+height = 25.0
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="platform" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 28 )
+use_collision = true
+
+[node name="platform2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 30 )
+use_collision = true
+
+[node name="platform3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 32 )
+use_collision = true
